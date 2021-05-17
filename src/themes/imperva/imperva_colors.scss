@@ -27,7 +27,11 @@ $euiColorFullShade: #000;         // gray 900
 
 // Every color below must be based mathematically on the set above and in a particular order.
 $euiTextColor: $euiColorDarkestShade;
+$euiPageBackgroundColor: tintOrShade($euiColorLightestShade, 50%, 30%);
+$euiTextSubduedColor: makeHighContrastColor($euiColorMediumShade);
+$euiTitleColor: shadeOrTint($euiTextColor, 0%, 0%);
 $euiLinkColor: $euiColorPrimary;
+$euiFocusBackgroundColor: tintOrShade($euiColorPrimary, 90%, 50%);
 
 // Contrasty text variants
 $euiColorPrimaryText: makeHighContrastColor($euiColorPrimary);
