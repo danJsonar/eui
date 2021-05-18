@@ -1016,14 +1016,14 @@
     redux-immutable-state-invariant "^2.1.0"
     redux-logger "^3.0.6"
 
-"@elastic/datemath@^5.0.3":
+"@elastic/datemath@5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@elastic/datemath/-/datemath-5.0.3.tgz#7baccdab672b9a3ecb7fe8387580670936b58573"
   integrity sha512-8Hbr1Uyjm5OcYBfEB60K7sCP6U3IXuWDaLaQmYv3UxgI4jqBWbakoemwWvsqPVUvnwEjuX6z7ghPZbefs8xiaA==
   dependencies:
     tslib "^1.9.3"
 
-"@elastic/eslint-config-kibana@^0.15.0":
+"@elastic/eslint-config-kibana@0.15.0":
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/@elastic/eslint-config-kibana/-/eslint-config-kibana-0.15.0.tgz#a552793497cdfc1829c2f9b7cd7018eb008f1606"
   integrity sha1-pVJ5NJfN/Bgpwvm3zXAY6wCPFgY=
