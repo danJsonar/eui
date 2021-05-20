@@ -8,10 +8,6 @@ test/failure-screenshots/**/*.png
 coverage/
 reports/
 tmp/
-dist/
-lib/
-es/
-test-env/
 .idea
 .vscode/
 .DS_Store
