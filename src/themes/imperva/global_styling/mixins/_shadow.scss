@@ -21,14 +21,14 @@
 @mixin euiBottomShadowMedium($color: $euiShadowColor, $opacity: .1) {
   box-shadow:
     0 1px 1px rgba($color, .1),
-    0 6px 7px -1px rgba($color, .15),
+    0 6px 7px -1px rgba($color, .15);
 }
 
 // Depth 32: pop up dialogs
 @mixin euiBottomShadow($color: $euiShadowColorLarge, $opacity: .1, $adjustBorders: false) {
   box-shadow:
     0 8px 24px rgba($color, .13),
-    0 4px 14px rgba($color, .1),
+    0 4px 14px rgba($color, .1);
 }
 
 // Depth 64
@@ -41,11 +41,11 @@
   @if ($reverse) {
     box-shadow:
       0 -24px 60px rgba($color, .18),
-      0 -4px 14px rgba($color, $opacity),
+      0 -4px 14px rgba($color, $opacity);
   } @else {
     box-shadow:
       0 24px 60px rgba($color, .18),
-      0 4px 14px rgba($color, .1),
+      0 4px 14px rgba($color, .1);
   }
 }
 

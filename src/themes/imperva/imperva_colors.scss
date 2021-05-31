@@ -1,11 +1,12 @@
 // This extra import allows any variables that are created via functions to work when loaded into JS
 @import '../../global_styling/variables/colors';
+@import './design_system/color_palettes';
 
 // Core
-$euiColorPrimary: #285AE6;    // primary blue
-$euiColorSecondary: #2DB07F;  // primary success
-$euiColorAccent: #E561AF;     // primary magenta
-$euiColorHighlight: #F0F6FF;  // blue 50
+$euiColorPrimary: $impColorBlue500;
+$euiColorSecondary: $impColorSuccess400;
+$euiColorAccent: $impColorAccent500;
+$euiColorHighlight: $impColorBlue50;
 
 // These colors stay the same no matter the theme
 $euiColorGhost: #FFF;
@@ -13,17 +14,17 @@ $euiColorInk: #000;
 
 // Status
 $euiColorSuccess: $euiColorSecondary;
-$euiColorWarning: #FAC73A;    // warning primary
-$euiColorDanger: #DF2427;     // alert primary
+$euiColorWarning: $impColorWarning500;
+$euiColorDanger: $impColorAlert500;
 
 // Grays
-$euiColorEmptyShade: #FEFEFE;     // gray 50
-$euiColorLightestShade: #E5EBF2;  // gray 200
-$euiColorLightShade: #ACB9C5;     // gray 400
-$euiColorMediumShade: #808B95;    // gray 500
-$euiColorDarkShade: #606A73;      // gray 600
-$euiColorDarkestShade: #212121;   // gray 800
-$euiColorFullShade: #000;         // gray 900
+$euiColorEmptyShade: $impColorGray50;
+$euiColorLightestShade: $impColorGray200;
+$euiColorLightShade: $impColorGray400;
+$euiColorMediumShade: $impColorGray500;
+$euiColorDarkShade: $impColorGray600;
+$euiColorDarkestShade: $impColorGray800;
+$euiColorFullShade: $impColorGray900;
 
 // Every color below must be based mathematically on the set above and in a particular order.
 $euiTextColor: $euiColorDarkestShade;
