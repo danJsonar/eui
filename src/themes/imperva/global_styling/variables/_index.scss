@@ -1,6 +1,7 @@
 // Import base theme first, then override
 @import '../../../../global_styling/variables/index';
 
+@import 'buttons';
 @import 'typography';
 @import 'shadows';
 @import 'borders';

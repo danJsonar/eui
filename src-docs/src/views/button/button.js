@@ -148,6 +148,32 @@ export default () => (
       </EuiFlexItem>
     </EuiFlexGroup>
 
+    <EuiFlexGroup gutterSize="s" alignItems="center" responsive={false} wrap>
+      <EuiFlexItem grow={false}>
+        <EuiButton color="text" onClick={() => {}}>
+          Text
+        </EuiButton>
+      </EuiFlexItem>
+
+      <EuiFlexItem grow={false}>
+        <EuiButton color="text" fill onClick={() => {}}>
+          Filled
+        </EuiButton>
+      </EuiFlexItem>
+
+      <EuiFlexItem grow={false}>
+        <EuiButton color="text" size="s" onClick={() => {}}>
+          Small
+        </EuiButton>
+      </EuiFlexItem>
+
+      <EuiFlexItem grow={false}>
+        <EuiButton color="text" size="s" fill onClick={() => {}}>
+          Small and filled
+        </EuiButton>
+      </EuiFlexItem>
+    </EuiFlexGroup>
+
     <EuiFlexGroup gutterSize="s" alignItems="center">
       <EuiFlexItem grow={false}>
         <EuiButton isDisabled onClick={() => window.alert('Button clicked')}>

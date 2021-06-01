@@ -1,0 +1,141 @@
+.euiButton {
+  @include euiButton;
+
+  border-radius: $euiBorderRadiusLarge;
+
+  &:disabled {
+    @include euiButtonContentDisabled;
+
+    color: $impButtonColorDisabled;
+    border-color: $impButtonColorDisabled;
+
+    &.euiButton--fill {
+      // Only increase the contrast of background color to text to 2.0 for disabled
+      color: $euiFillButtonColorDisabledText;
+      background-color: $euiFillButtonColorDisabled;
+      border-color: $euiFillButtonColorDisabled;
+
+      // sass-lint:disable nesting-depth
+      &:hover,
+      &:focus {
+        background-color: $euiFillButtonColorDisabled;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+@each $name, $color in $euiButtonTypes {
+  .euiButton--#{$name} {
+    color: $color;
+    border-color: $color;
+
+    &:active {
+      @if ($name == 'primary') {
+        background-color: $impColorBlue100;
+      } @else if ($name == 'secondary') {
+        background-color: $impColorSuccess100;
+      } @else if ($name == 'warning') {
+        background-color: $impColorWarning100;
+      } @else if ($name == 'danger') {
+        background-color: $impColorAlert100;
+      }
+    }
+
+    &:enabled {
+      &:hover,
+      &:focus {
+        @if ($name == 'primary') {
+          background-color: $impColorBlue50;
+        } @else if ($name == 'secondary') {
+          background-color: $impColorSuccess50;
+        } @else if ($name == 'warning') {
+          background-color: $impColorWarning50;
+        } @else if ($name == 'danger') {
+          background-color: $impColorAlert50;
+        }
+      }
+    }
+
+    &.euiButton--fill {
+      color: $impButtonFilledColor;
+      background-color: $color;
+      border-color: $color;
+
+      &:active {
+        @if ($name == 'primary') {
+          background-color: $impColorBlue700;
+          border-color: $impColorBlue700;
+        } @else if ($name == 'secondary') {
+          background-color: $impColorSuccess600;
+          border-color: $impColorSuccess600;
+        } @else if ($name == 'warning') {
+          background-color: $impColorWarning800;
+          border-color: $impColorWarning800;
+        } @else if ($name == 'danger') {
+          background-color: $impColorAlert700;
+          border-color: $impColorAlert700;
+        }
+      }
+
+      &:enabled {
+        &:hover,
+        &:focus {
+          @if ($name == 'primary') {
+            background-color: $impColorBlue600;
+            border-color: $impColorBlue600;
+          } @else if ($name == 'secondary') {
+            background-color: $impColorSuccess500;
+            border-color: $impColorSuccess500;
+          } @else if ($name == 'warning') {
+            background-color: $impColorWarning700;
+            border-color: $impColorWarning700;
+          } @else if ($name == 'danger') {
+            background-color: $impColorAlert600;
+            border-color: $impColorAlert600;
+          }
+        }
+      }
+    }
+  }
+}
+
+.euiButton--text {
+  color: $impButtonTextColor;
+  border-color: $impButtonTextBorder;
+
+  &:active {
+    background-color: $impButtonTextActive;
+    border-color: $impButtonTextActiveBorder;
+  }
+
+  &:enabled {
+    &:hover,
+    &:focus {
+      background-color: $impButtonTextHover;
+    }
+  }
+
+  &.euiButton--fill {
+    color: $impButtonFilledColor;
+    background-color: $impFillButtonText;
+    border-color: $impFillButtonText;
+
+    &:active {
+      background-color: $impFillButtonTextActive;
+      border-color: $impFillButtonTextActive;
+    }
+
+    &:enabled {
+      &:hover,
+      &:focus {
+        background-color: $impFillButtonTextHover;
+        border-color: $impFillButtonTextHover;
+      }
+    }
+  }
+}

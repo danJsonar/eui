@@ -1,0 +1,23 @@
+$euiFillButtonColorDisabled: $impColorGray200;
+$euiFillButtonColorDisabledText: $impColorGray600;
+
+$impButtonColorDisabled: $impColorGray400;
+
+$impButtonFilledColor: $euiColorGhost;
+
+$impButtonText: $impColorGray100;
+$impButtonTextColor: $impColorGray700;
+$impButtonTextBorder: $impColorGray300;
+$impButtonTextHover: $impColorGray200;
+$impButtonTextActive: $impColorGray300;
+$impButtonTextActiveBorder: $impColorGray400;
+$impFillButtonText: $impColorGray500;
+$impFillButtonTextHover: $impColorGray600;
+$impFillButtonTextActive: $impColorGray700;
+
+$euiButtonTypes: (
+  primary: $euiColorPrimary,
+  secondary: $euiColorSecondary,
+  warning: $euiColorWarning,
+  danger: $euiColorDanger,
+);

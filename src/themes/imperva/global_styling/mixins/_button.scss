@@ -1,0 +1,42 @@
+
+@mixin euiButtonBase {
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  height: $euiButtonHeight;
+  line-height: $euiButtonHeight; // prevents descenders from getting cut off
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%;
+  vertical-align: middle;
+  box-shadow: none;
+}
+
+@mixin euiButtonFont {
+  font-family: $euiFontFamily;
+  font-weight: $euiFontWeightMedium;
+  letter-spacing: .5px;
+  font-kerning: normal;
+}
+
+// Adds the focus (and hover) animation for translating up 1px
+@mixin euiButtonFocus {
+  transition: all $euiAnimSpeedNormal ease-in-out;
+
+  &:focus {
+    animation: euiButtonActive $euiAnimSpeedNormal $euiAnimSlightBounce;
+  }
+}
+
+@mixin euiButton {
+  @include euiButtonBase;
+  @include euiButtonFont;
+  @include euiFontSize;
+
+  text-decoration: none;
+  border: solid 1px transparent;
+
+  // sass-lint:disable mixins-before-declarations
+  // focus states should come after all default styles
+  @include euiButtonFocus;
+}
