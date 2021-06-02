@@ -1,0 +1,46 @@
+.euiModal {
+  @include euiBottomShadow;
+  border: none;
+}
+
+.euiModalHeader {
+  padding: $euiSizeL;
+  border-bottom: $euiBorderThin;
+}
+
+.euiModalHeader__title {
+  font-weight: $euiFontWeightMedium;
+}
+
+.euiModalBody {
+  .euiModalBody__overflow {
+    padding: $euiSizeL;
+  }
+}
+
+.euiModalFooter {
+  padding: $euiSize;
+  border-top: $euiBorderThin;
+}
+
+.euiModal--confirmation {
+  .euiModalHeader {
+    border: none;
+  }
+
+  .euiModalBody {
+    .euiModalBody__overflow {
+      padding: 0 $euiSizeL;
+    }
+  }
+
+  .euiModalFooter {
+    padding: $euiSize;
+    border: none;
+  }
+}
+
+.euiModal__closeIcon {
+  right: $euiSize + $euiSizeXS;
+  top: $euiSize + $euiSizeXS;
+}
