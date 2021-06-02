@@ -1,5 +1,11 @@
 // Borders
 
+$euiBorderColor: $impColorGray300;
+
 $euiBorderRadius: 4px;
 $euiBorderRadiusSmall: $euiBorderRadius / 2;
 $euiBorderRadiusLarge: $euiBorderRadius * 2;
+
+$euiBorderThick: $euiBorderWidthThick solid $euiBorderColor;
+$euiBorderThin: $euiBorderWidthThin solid $euiBorderColor;
+$euiBorderEditable: $euiBorderWidthThick dotted $euiBorderColor;
