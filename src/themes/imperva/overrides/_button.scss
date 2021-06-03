@@ -1,7 +1,18 @@
 .euiButton {
-  @include euiButton;
-
   border-radius: $euiBorderRadiusLarge;
+  box-shadow: none;
+
+  &:hover,
+  &:active {
+    box-shadow: none;
+  }
+
+  &:enabled {
+    &:hover,
+    &:focus {
+      background-color: unset;
+    }
+  }
 
   &:disabled {
     @include euiButtonContentDisabled;
@@ -10,20 +21,20 @@
     border-color: $impButtonColorDisabled;
 
     &.euiButton--fill {
-      // Only increase the contrast of background color to text to 2.0 for disabled
       color: $euiFillButtonColorDisabledText;
       background-color: $euiFillButtonColorDisabled;
       border-color: $euiFillButtonColorDisabled;
 
-      // sass-lint:disable nesting-depth
       &:hover,
       &:focus {
         background-color: $euiFillButtonColorDisabled;
+        border-color: $euiFillButtonColorDisabled;
       }
     }
 
     &:hover,
     &:focus {
+      box-shadow: none;
       text-decoration: none;
     }
   }
@@ -47,8 +58,11 @@
     }
 
     &:enabled {
+      box-shadow: none;
       &:hover,
       &:focus {
+        box-shadow: none;
+
         @if ($name == 'primary') {
           background-color: $impColorBlue50;
         } @else if ($name == 'secondary') {
@@ -114,8 +128,10 @@
   }
 
   &:enabled {
+    box-shadow: none;
     &:hover,
     &:focus {
+      box-shadow: none;
       background-color: $impButtonTextHover;
     }
   }

@@ -5,18 +5,44 @@
     #{$selector} {
 
       @include euiSlightShadow;
+      background-color: $euiColorEmptyShade;
       border: none;
-    }
+      border-radius: $euiBorderRadius;
+      flex-grow: 1;
 
-    &#{$selector}--isClickable {
-      &:hover,
-      &:focus {
-        @include euiSlightShadowHover;
+      &#{$selector}--flexGrowZero {
+        flex-grow: 0;
       }
-    }
 
-    &#{$selector}--shadow {
-      @include euiBottomShadowSmall;
+      &#{$selector}--isClickable {
+        display: block;
+        width: 100%;
+        text-align: left;
+
+        transition: all $euiAnimSpeedFast $euiAnimSlightResistance;
+
+        &:hover,
+        &:focus {
+          @include euiSlightShadowHover;
+          transform: translateY(-2px);
+          cursor: pointer;
+        }
+      }
+
+      &#{$selector}--shadow {
+        @include euiBottomShadowSmall;
+
+        @if (lightness($euiTextColor) < 50) {
+          border-bottom-color: transparentize($euiShadowColor, .5);
+        } @else {
+          border-bottom-color: $euiBorderColor;
+        }
+
+        &#{$selector}--isClickable:hover,
+        &#{$selector}--isClickable:focus {
+          @include euiBottomShadow($color: $euiShadowColor, $opacity: .2);
+        }
+      }
     }
   }
 }

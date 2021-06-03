@@ -1,9 +1,6 @@
 // Overrides of src/components/table/_mixins.scss
 @mixin euiTableCellHeader {
-  vertical-align: middle;
-  font-weight: inherit;
-  text-align: inherit;
-  box-shadow: inset 0px -1px 0px $impColorGray600;
+  box-shadow: inset 0 -1px 0 $impColorGray600;
 }
 
 // Overrides of src/components/table/_variables.scss
@@ -12,16 +9,5 @@
 // Overrides of src/components/table/_table.scss
 .euiTableHeaderCell {
   @include euiTableCellHeader;
-  @include euiTitle('xxs');
-  font-weight: $euiFontWeightMedium;
-
-  .euiTableHeaderButton {
-    text-align: left;
-    font-weight: $euiFontWeightMedium;
-  }
-
-  .euiTableCellContent__text {
-    @include euiFontSizeXS;
-    font-weight: $euiFontWeightSemiBold;
-  }
+  border-bottom: none;
 }

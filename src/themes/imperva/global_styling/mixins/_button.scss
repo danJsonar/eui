@@ -1,4 +1,3 @@
-
 @mixin euiButtonBase {
   display: inline-block;
   appearance: none;
@@ -19,7 +18,6 @@
   font-kerning: normal;
 }
 
-// Adds the focus (and hover) animation for translating up 1px
 @mixin euiButtonFocus {
   transition: all $euiAnimSpeedNormal ease-in-out;
 
@@ -36,7 +34,5 @@
   text-decoration: none;
   border: solid 1px transparent;
 
-  // sass-lint:disable mixins-before-declarations
-  // focus states should come after all default styles
   @include euiButtonFocus;
 }
