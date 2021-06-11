@@ -1,0 +1,128 @@
+// Labels
+@mixin euiFormLabel {
+  @include euiFontSizeXS;
+  color: $euiTitleColor;
+  font-weight: $euiFontWeightRegular;
+  letter-spacing: .4px;
+}
+
+// sass-lint:disable-block no-vendor-prefixes
+@mixin impFormFont {
+  font-family: $euiFontFamily;
+  font-weight: $euiFontWeightRegular;
+  letter-spacing: .25px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-kerning: normal;
+}
+
+@mixin euiFormControlText {
+  @include impFormFont;
+  font-size: $euiFontSizeS;
+  color: $euiTextColor;
+  line-height: 20px;
+
+  @include internetExplorerOnly {
+    line-height: 1em; // fixes text alignment in IE
+  }
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include euiPlaceholderPerBrowser {
+    color: $euiColorDarkShade;
+  }
+}
+
+@mixin euiFormControlFocusStyle($borderOnly: false) {
+  border: $impFormBorderFocus;
+}
+
+@mixin euiFormControlInvalidStyle {
+  border: $impFormBorderInvalid;
+}
+
+@mixin euiFormControlDisabledStyle {
+  cursor: not-allowed;
+  color: $euiFormControlDisabledColor;
+  background-color: $euiFormBackgroundDisabledColor;
+  border: $impFormBorderDisabled;
+  box-shadow: none;
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include euiPlaceholderPerBrowser {
+    color: $euiFormControlDisabledColor;
+  }
+}
+
+@mixin euiFormControlReadOnlyStyle {
+  cursor: default;
+  // Use transparency since there is no border and in case form is on a non-white background
+  color: $euiFormControlReadonlyColor;
+  background-color: $euiFormBackgroundReadOnlyColor;
+  border: $impFormBorderDisabled;
+  box-shadow: none;
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include euiPlaceholderPerBrowser {
+    color: $euiFormControlReadonlyColor;
+  }
+}
+
+@mixin euiFormControlDefaultShadow($borderOnly: false) {
+  background-color: $impColorGray50;
+}
+
+// 2. Override invalid state with focus state.
+@mixin euiFormControlStyle($borderOnly: false, $includeStates: true, $includeSizes: true) {
+  @include euiFormControlSize($includeAlternates: $includeSizes);
+  @include euiFormControlDefaultShadow;
+  @include euiFormControlText;
+
+  border: $impFormBorder;
+  border-radius: $euiFormControlBorderRadius;
+  padding: $euiFormControlPadding;
+
+  @if ($includeStates) {
+    &:invalid { // 2
+      @include euiFormControlInvalidStyle;
+    }
+
+    &:focus { // 2
+      @include euiFormControlFocusStyle;
+    }
+
+    &:disabled {
+      @include euiFormControlDisabledStyle;
+    }
+
+    &[readOnly] {
+      @include euiFormControlReadOnlyStyle;
+    }
+
+    // Needs to be set for autofill
+    // sass-lint:disable-block no-vendor-prefixes
+    &:-webkit-autofill {
+      -webkit-text-fill-color: lightOrDarkTheme($euiColorDarkestShade, $euiColorLightShade);
+
+      ~ .euiFormControlLayoutIcons {
+        color: lightOrDarkTheme($euiColorDarkestShade, $euiColorLightShade);
+      }
+    }
+  }
+
+  @if ($includeSizes) {
+    &--compressed {
+      @include euiFormControlStyleCompressed($borderOnly, $includeStates);
+    }
+
+    &--withToggle {
+      border-radius: $euiFormControlBorderRadius 0 0 $euiFormControlBorderRadius;
+      border: $impFormBorder;
+    }
+
+    &--inGroup {
+      // sass-lint:disable-block no-important
+      box-shadow: none !important;
+      border-radius: 0;
+    }
+  }
+}

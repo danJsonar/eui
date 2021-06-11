@@ -1,0 +1,17 @@
+// Sizing
+$euiFormControlBorderRadius: $euiBorderRadius;
+$euiFormControlCompressedBorderRadius: $euiBorderRadius;
+
+// Coloring
+$euiFormBorderColor: $impColorGray500;
+$euiFormBackgroundDisabledColor: $impColorGray200;
+$euiFormControlDisabledColor: $impColorGray400;
+$euiFormBackgroundReadOnlyColor: $impColorGray100;
+$euiFormControlReadonlyColor: $impColorGray500;
+$euiFormInputGroupLabelBackground: $impColorGray300;
+
+// Border
+$impFormBorder: $euiBorderWidthThin solid $euiFormBorderColor;
+$impFormBorderFocus: $euiBorderWidthThin solid $impColorSuccess400;
+$impFormBorderDisabled: $euiBorderWidthThin solid $impColorGray400;
+$impFormBorderInvalid: $euiBorderWidthThin solid $impColorAlert500;
