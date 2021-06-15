@@ -1,0 +1,63 @@
+.euiButtonGroup__toggle {
+  &[class*='checked'] {
+    + [class*='checked'] {
+      box-shadow: none;
+    }
+  }
+
+  .euiButtonGroup__button {
+    &:not([class*='fill']) {
+      border-color: $impButtonTextBorder;
+    }
+
+    &:enabled {
+      box-shadow: none;
+    }
+  }
+
+  &:first-child {
+    .euiButtonGroup__button {
+      border-top-left-radius: $impButtonBorderRadius;
+      border-bottom-left-radius: $impButtonBorderRadius;
+    }
+  }
+
+  &:last-child .euiButtonGroup__button {
+    border-top-right-radius: $impButtonBorderRadius;
+    border-bottom-right-radius: $impButtonBorderRadius;
+  }
+
+}
+
+.euiButtonGroup--compressed {
+  border: 1px solid $impButtonTextBorder;
+  border-radius: $impButtonBorderRadius;
+  background-color: $euiFormBackgroundColor;
+
+  .euiButtonGroup__button {
+    border-radius: $impButtonBorderRadius;
+
+    &:not(.euiButtonGroup__button--selected):not(:disabled) {
+      color: $impButtonTextColor;
+    }
+  }
+
+  .euiButtonGroup__toggle {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .euiButtonToggle__input:enabled:hover + .euiButtonGroup__button,
+  .euiButtonToggle__input:enabled:focus + .euiButtonGroup__button {
+    background-color: $impButtonTextHover;
+  }
+
+  .euiButtonToggle__input:enabled:focus + .euiButtonGroup__button {
+    outline: none;
+  }
+
+  .euiButtonGroup__button--selected {
+    font-weight: $euiFontWeightSemiBold;
+    background-color: $impButtonTextActive;
+  }
+}
