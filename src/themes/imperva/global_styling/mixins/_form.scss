@@ -33,19 +33,20 @@
 }
 
 @mixin euiFormControlFocusStyle($borderOnly: false) {
-  border: $impFormBorderFocus;
+  background-size: 100% 100%;
+  box-shadow: inset 0 0 0 1px $euiFormBorderColor;
 }
 
 @mixin euiFormControlInvalidStyle {
-  border: $impFormBorderInvalid;
+  background-size: 100% 100%;
+  box-shadow: inset 0 0 0 1px $impFormBorderInvalidColor;
 }
 
 @mixin euiFormControlDisabledStyle {
   cursor: not-allowed;
   color: $euiFormControlDisabledColor;
   background-color: $euiFormBackgroundDisabledColor;
-  border: $impFormBorderDisabled;
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px $impFormBorderDisabledColor;
 
   // sass-lint:disable-block mixins-before-declarations
   @include euiPlaceholderPerBrowser {
@@ -55,11 +56,9 @@
 
 @mixin euiFormControlReadOnlyStyle {
   cursor: default;
-  // Use transparency since there is no border and in case form is on a non-white background
   color: $euiFormControlReadonlyColor;
   background-color: $euiFormBackgroundReadOnlyColor;
-  border: $impFormBorderDisabled;
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px $impFormBorderDisabledColor;
 
   // sass-lint:disable-block mixins-before-declarations
   @include euiPlaceholderPerBrowser {
@@ -68,16 +67,26 @@
 }
 
 @mixin euiFormControlDefaultShadow($borderOnly: false) {
-  background-color: $impColorGray50;
+  background-color: $euiFormBackgroundColor;
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+
+  @if ($borderOnly) {
+    box-shadow: 0 0 0 1px $euiFormBorderColor;
+  } @else {
+    box-shadow: #{$euiFormControlBoxShadow},
+    0 0 0 1px $euiFormBorderColor;
+  }
+
 }
 
 // 2. Override invalid state with focus state.
 @mixin euiFormControlStyle($borderOnly: false, $includeStates: true, $includeSizes: true) {
   @include euiFormControlSize($includeAlternates: $includeSizes);
-  @include euiFormControlDefaultShadow;
+  @include euiFormControlDefaultShadow($borderOnly: true);
   @include euiFormControlText;
 
-  border: $impFormBorder;
+  border: none;
   border-radius: $euiFormControlBorderRadius;
   padding: $euiFormControlPadding;
 
@@ -87,7 +96,7 @@
     }
 
     &:focus { // 2
-      @include euiFormControlFocusStyle;
+      @include euiFormControlFocusStyle($borderOnly: true);
     }
 
     &:disabled {
@@ -116,12 +125,9 @@
 
     &--withToggle {
       border-radius: $euiFormControlBorderRadius 0 0 $euiFormControlBorderRadius;
-      border: $impFormBorder;
     }
 
     &--inGroup {
-      // sass-lint:disable-block no-important
-      box-shadow: none !important;
       border-radius: 0;
     }
   }
