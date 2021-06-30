@@ -15,3 +15,13 @@ $euiFormInputGroupLabelBackground: $impColorGray300;
 $impFormBorderFocusColor: $impColorSuccess400;
 $impFormBorderDisabledColor: $impColorGray400;
 $impFormBorderInvalidColor: $impColorAlert500;
+
+// Switch
+$euiSwitchHeight: $euiSize * 1.5;
+$euiSwitchWidth: $euiSize * 3;
+$euiSwitchThumbSize: $euiSwitchHeight - 6px;
+$euiSwitchIconHeight: $euiSize;
+$euiSwitchOffColor: $impColorGray400;
+
+$euiSwitchWidthCompressed: $euiSize * 2;
+$euiSwitchThumbSizeCompressed: $euiSwitchHeightCompressed * .625;

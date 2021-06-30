@@ -1,0 +1,17 @@
+// For using icons as background images (data-uri)
+@mixin euiIconBackground($type, $color: $euiColorEmptyShade) {
+  // sass-lint:disable-block quotes
+  @if variable-exists(type) == false {
+    @error 'A $type:string must be provided to @mixin euiIconBackground().';
+  } @else if type-of($color) != color {
+    @warn "The second parameter must be a valid color type -- got $color:#{type-of($color)} = #{$color}.";
+  } @else if $type == 'check' {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.6667 0H1.33333C0.596954 0 0 0.596954 0 1.33333V14.6667C0 15.403 0.596954 16 1.33333 16H14.6667C15.403 16 16 15.403 16 14.6667V1.33333C16 0.596954 15.403 0 14.6667 0ZM6.66667 11.6667L3.33333 8.33333L4.39333 7.33333L6.66667 9.56667L11.6067 4.66667L12.6667 5.72L6.66667 11.6667Z' fill='#{hexToRGB($color)}'/%3E%3C/svg%3E");
+  } @else if $type == 'dot' {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Ccircle cx='8' cy='11' r='3' fill='#{hexToRGB($color)}' fill-rule='evenodd' transform='translate(-5 -8)'/%3E%3C/svg%3E");
+  } @else if $type == 'square' {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.6667 0H1.33333C0.596954 0 0 0.596954 0 1.33333V14.6667C0 15.403 0.596954 16 1.33333 16H14.6667C15.403 16 16 15.403 16 14.6667V1.33333C16 0.596954 15.403 0 14.6667 0ZM12 9H4V7H12V9Z' fill='#{hexToRGB($color)}'/%3E%3C/svg%3E%0A");
+  } @else {
+    @error "The $type of #{$type} cannot be found.";
+  }
+}

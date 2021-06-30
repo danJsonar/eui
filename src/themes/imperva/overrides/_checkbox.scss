@@ -1,0 +1,26 @@
+// to remove the thick light blue border which is set important
+// sass-lint:disable no-important
+.euiCheckbox {
+  .euiCheckbox__input {
+    + .euiCheckbox__square {
+      border-radius: 2px;
+      box-shadow: none;
+      border-color: $impColorGray900;
+      background-color: $euiColorGhost;
+    }
+
+    &[disabled] {
+      ~ .euiCheckbox__label {
+        color: $impColorGray800;
+      }
+    }
+
+    &:focus,
+    &:active:not(:disabled) {
+      + .euiCheckbox__square {
+        border-color: $impColorGray900;
+        animation: none !important;
+      }
+    }
+  }
+}

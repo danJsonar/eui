@@ -132,3 +132,49 @@
     }
   }
 }
+
+/** checkbox, radio **/
+@mixin euiCustomControl($type: null, $size: $euiSize) {
+  @include euiSlightShadow;
+
+  @if $size {
+    $size: $size - 2px; // subtract 2px from size to account for border size
+    padding: $size / 2;
+  }
+
+  border: 1px solid $impColorGray900;
+  background: $euiColorGhost no-repeat center;
+
+  @if $type == 'round' {
+    border-radius: $size;
+  } @else if $type == 'square' {
+    border-radius: 2px;
+  }
+  // sass-lint:disable-block indentation
+  transition: background-color $euiAnimSpeedFast ease-in,
+  border-color $euiAnimSpeedFast ease-in;
+}
+
+@mixin euiCustomControlSelected($type: null) {
+  border-color: $impColorGray900;
+  background-color: $euiColorGhost;
+
+  @if $type != null {
+    @include euiIconBackground($type, $impColorGray800);
+  }
+}
+
+@mixin euiCustomControlDisabled($type: null) {
+  border-color: $euiColorLightShade;
+  background-color: $euiColorGhost;
+  box-shadow: none;
+  @if $type != null {
+    @include euiIconBackground($type, $impColorGray400);
+  }
+}
+
+@mixin euiCustomControlFocused {
+  @include euiFocusRing;
+  border-color: $impColorGray800;
+}
+
