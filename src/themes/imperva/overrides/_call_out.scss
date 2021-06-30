@@ -1,0 +1,50 @@
+// Overrides of src/components/call_out/_mixins.scss
+@mixin euiCallOutTitle($size: null) {
+  @if ($size == 's') {
+    @include euiTitle('xxxs');
+    font-weight: $euiFontWeightMedium;
+  } @else {
+    @include euiTitle('xxs');
+    font-weight: $euiFontWeightSemiBold;
+  }
+}
+
+// Overrides of src/components/call_out/_variables.scss
+$impCallOutTypes: (
+  text: (border-color: $impColorGray300, background-color: $impColorGray100, fill: $impColorGray600),
+  primary: (border-color: $euiColorPrimary, background-color: $impColorGray100, fill: $euiColorPrimary),
+  success: (border-color: $euiColorSecondary, background-color: $impColorSuccess50, fill: $euiColorSecondary),
+  warning: (border-color: $euiColorWarning, background-color: $impColorWarning50, fill: $euiColorWarning),
+  danger: (border-color: $euiColorDanger, background-color: $impColorAlert50, fill: $euiColorDanger),
+);
+
+
+// Overrides of src/components/call_out/_call_out.scss
+.euiCallOut {
+  border: $euiBorderThin;
+  border-radius: $euiBorderRadius;
+  background-color: $euiColorEmptyShade;
+
+  .euiCallOutHeader__title {
+    @include euiCallOutTitle;
+  }
+
+  .euiCallOutHeader + .euiText {
+    transform: translateX($euiSizeL);
+  }
+}
+
+@each $name, $styles in $impCallOutTypes {
+  .euiCallOut--#{$name} {
+    border-color: map-get($styles, border-color);
+    background-color: map-get($styles, background-color);
+
+    .euiCallOutHeader__icon {
+      fill: map-get($styles, fill);
+    }
+
+    .euiCallOutHeader__title {
+      color: $euiTitleColor;
+    }
+  }
+}

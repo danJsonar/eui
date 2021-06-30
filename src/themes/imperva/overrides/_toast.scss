@@ -1,0 +1,39 @@
+$impToastTypes: (
+  text: (border-color: $impColorGray300, background-color: $impColorGray100, fill: $impColorGray600),
+  primary: (border-color: $euiColorPrimary, background-color: $impColorGray100, fill: $euiColorPrimary),
+  success: (border-color: $euiColorSecondary, background-color: $impColorSuccess50, fill: $euiColorSecondary),
+  warning: (border-color: $euiColorWarning, background-color: $impColorWarning50, fill: $euiColorWarning),
+  danger: (border-color: $euiColorDanger, background-color: $impColorAlert50, fill: $euiColorDanger),
+);
+
+// Overrides of src/components/toast/_toast.scss
+.euiToast {
+  border-radius: $euiBorderRadius;
+  @include euiBottomShadowMedium;
+}
+
+.euiToast__closeButton {
+  opacity: .75;
+
+  svg {
+    fill: $impColorGray600;
+  }
+}
+
+.euiToastHeader__title {
+  @include euiTitle('xxs');
+  @include euiTextBreakWord;
+  font-weight: $euiFontWeightSemiBold;
+}
+
+@each $name, $styles in $impToastTypes {
+  .euiToast--#{$name} {
+    border-top-width: 1px;
+    border-color: map-get($styles, border-color);
+    background-color: map-get($styles, background-color);
+
+    .euiToastHeader__icon {
+      fill: map-get($styles, fill);
+    }
+  }
+}
