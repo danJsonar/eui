@@ -1,0 +1,50 @@
+//sass-lint:disable nesting-depth
+.euiSwitch {
+  .euiSwitch__button {
+    &[aria-checked='false'] {
+      .euiSwitch__body {
+        background-color: $impColorGray500;
+      }
+
+      .euiSwitch__thumb {
+        left: 3px;
+      }
+    }
+
+    &:disabled {
+      .euiSwitch__body {
+        background-color: $impColorGray200;
+      }
+
+      .euiSwitch__thumb {
+        border-color: $impColorGray400;
+      }
+
+      + .euiSwitch__label {
+        color: $impColorGray800;
+      }
+    }
+  }
+
+  .euiSwitch__thumb {
+    border-color: $euiColorGhost;
+    top: 3px;
+    left: 27px;
+  }
+
+  .euiSwitch__track {
+    display: none;
+  }
+
+  &.euiSwitch--compressed {
+    .euiSwitch__thumb {
+      @include euiCustomControl($type: 'round', $size: $euiSwitchThumbSizeCompressed);
+      left: ($euiSwitchWidthCompressed) - ($euiSwitchThumbSizeCompressed) - 3px;
+      top: 3px;
+    }
+
+    .euiSwitch__button[aria-checked='false'] .euiSwitch__thumb {
+      left: 3px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// Sizing
+$euiFormControlBorderRadius: $euiBorderRadius;
+$euiFormControlCompressedBorderRadius: $euiBorderRadius;
+
+// Coloring
+$euiFormBorderColor: $impColorGray500;
+$euiFormBackgroundColor: $impColorGray50;
+$euiFormBackgroundDisabledColor: $impColorGray200;
+$euiFormControlDisabledColor: $impColorGray400;
+$euiFormBackgroundReadOnlyColor: $impColorGray100;
+$euiFormControlReadonlyColor: $impColorGray500;
+$euiFormInputGroupLabelBackground: $impColorGray300;
+
+// Border
+$impFormBorderFocusColor: $impColorSuccess400;
+$impFormBorderDisabledColor: $impColorGray400;
+$impFormBorderInvalidColor: $impColorAlert500;
+
+// Switch
+$euiSwitchHeight: $euiSize * 1.5;
+$euiSwitchWidth: $euiSize * 3;
+$euiSwitchThumbSize: $euiSwitchHeight - 6px;
+$euiSwitchIconHeight: $euiSize;
+$euiSwitchOffColor: $impColorGray400;
+
+$euiSwitchWidthCompressed: $euiSize * 2;
+$euiSwitchThumbSizeCompressed: $euiSwitchHeightCompressed * .625;

@@ -1,0 +1,33 @@
+.euiButtonEmpty {
+  border-radius: $impButtonBorderRadius;
+
+  &:disabled {
+    color: $impButtonColorDisabled;
+  }
+}
+
+@each $name, $color in $impButtonEmptyTypes {
+  .euiButtonEmpty--#{$name} {
+    color: $color;
+
+    &:hover,
+    &:focus {
+      @if ($name == 'danger') {
+        background-color: $impColorAlert50;
+      } @else {
+        background-color: $impColorGray100;
+      }
+    }
+
+    &:active {
+      @if ($name == 'danger') {
+        color: $impColorAlert600;
+        background-color: $impColorAlert100;
+      } @else {
+        color: $impColorBlue600;
+        background-color: $impColorBlue100;
+      }
+    }
+  }
+}
+

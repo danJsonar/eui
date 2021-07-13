@@ -1,0 +1,7 @@
+.euiRadio {
+  .euiRadio__input {
+    &[disabled] ~ .euiRadio__label {
+      color: $impColorGray800;
+    }
+  }
+}

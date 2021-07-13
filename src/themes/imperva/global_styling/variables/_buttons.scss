@@ -15,9 +15,17 @@ $impFillButtonText: $impColorGray500;
 $impFillButtonTextHover: $impColorGray600;
 $impFillButtonTextActive: $impColorGray700;
 
-$euiButtonTypes: (
+$impButtonBorderRadius: $euiBorderRadius * 2;
+
+$impButtonTypes: (
   primary: $euiColorPrimary,
   secondary: $euiColorSecondary,
   warning: $euiColorWarning,
   danger: $euiColorDanger,
+);
+
+$impButtonEmptyTypes: (
+  primary: $euiColorPrimary,
+  danger: $euiColorDanger,
+  text: $impButtonTextColor,
 );

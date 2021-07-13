@@ -1,5 +1,5 @@
 .euiButton {
-  border-radius: $euiBorderRadiusLarge;
+  border-radius: $impButtonBorderRadius;
   box-shadow: none;
 
   &:hover,
@@ -15,8 +15,6 @@
   }
 
   &:disabled {
-    @include euiButtonContentDisabled;
-
     color: $impButtonColorDisabled;
     border-color: $impButtonColorDisabled;
 
@@ -35,12 +33,11 @@
     &:hover,
     &:focus {
       box-shadow: none;
-      text-decoration: none;
     }
   }
 }
 
-@each $name, $color in $euiButtonTypes {
+@each $name, $color in $impButtonTypes {
   .euiButton--#{$name} {
     color: $color;
     border-color: $color;
@@ -59,6 +56,7 @@
 
     &:enabled {
       box-shadow: none;
+
       &:hover,
       &:focus {
         box-shadow: none;
@@ -129,6 +127,7 @@
 
   &:enabled {
     box-shadow: none;
+
     &:hover,
     &:focus {
       box-shadow: none;
